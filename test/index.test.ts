@@ -14,7 +14,7 @@ describe('Test transaction fetch', () => {
         'From Address': expect.any(String),
         'To Address': expect.any(String),
         Amount: expect.any(Number),
-        // 'Amount (no decimals)': expect.any(String),
+        // 'Amount (no decimals)': expect.any(String), # uncomment this line if options.includeNoDecimalAmount is true
         'Time of Transaction': expect.any(String),
       })
     );
@@ -31,7 +31,7 @@ describe('Test transaction fetch', () => {
           'From Address': expect.any(String),
           'To Address': expect.any(String),
           Amount: expect.any(Number),
-          // 'Amount (no decimals)': expect.any(String),
+          // 'Amount (no decimals)': expect.any(String), # uncomment this line if options.includeNoDecimalAmount is true
           'Time of Transaction': expect.any(String),
         },
       ])

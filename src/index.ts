@@ -85,9 +85,13 @@ const getTransactionById = async (
           'From Address': owner_address,
           'To Address': to_address,
           Amount: amount,
-          'Amount (no decimals)': options?.includeNoDecimalAmount
-            ? new bignumber(amount).dividedBy(bigDecimal).toString()
-            : undefined,
+          ...(options?.includeNoDecimalAmount
+            ? {
+                'Amount (no decimals)': new bignumber(amount)
+                  .dividedBy(bigDecimal)
+                  .toString(),
+              }
+            : {}),
           'Time of Transaction': formatDate(data.raw_data.timestamp),
         };
 
